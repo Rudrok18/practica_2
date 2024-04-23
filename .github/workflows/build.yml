@@ -21,8 +21,6 @@ jobs:
         server_address: smtp.gmail.com
         server_port: 465
         secure: true
-        username: ${{secrets.MAIL_USERNAME}}
-        password: ${{secrets.MAIL_PASSWORD}}
         subject: Cambios subidos a ${{ github.ref_name }}
         to: rodrigolopezc03@gmail.com
         from: 'Rodrigo Lopez <rodrigolopezc03@gmail.com>'
