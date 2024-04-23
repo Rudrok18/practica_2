@@ -22,13 +22,11 @@
     # Required mail subject:
     subject: Github Actions job result
     # Required recipients' addresses:
-    to: rodrigo.lopez@iteso.mx,edgar.zaragoza@iteso.mx
+    to: rodrigolopezc03@gmail.com
     # Required sender full name (address can be skipped):
-    from: Práctica 2 # <user@example.com>
+    from: rodrigolopezc03@gmail.com # <user@example.com>
     # Optional plain body:
     body: Build job of ${{https://github.com/Rudrok18/practica_2.git}} completed successfully!
     # Optional HTML body read from file:
     html_body: file://mail.html
-    # Optional carbon copy recipients:
-    cc: rodrigo.lopez@iteso.mx
     
