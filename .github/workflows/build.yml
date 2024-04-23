@@ -1,0 +1,32 @@
+name: Email Notification on Push
+
+on:
+  push:
+    branches:
+      - main
+      - feature_a
+      - feature_b
+
+jobs:
+  send_email:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Send mail
+      uses: dawidd6/action-send-mail@v3
+      with:
+        connection_url: ${{secrets.MAIL_CONNECTION}}
+        server_address: smtp.gmail.com
+        server_port: 465
+        secure: true
+        username: ${{secrets.MAIL_USERNAME}}
+        password: ${{secrets.MAIL_PASSWORD}}
+        subject: Cambios subidos a ${{ github.ref_name }}
+        to: rodrigolopezc03@gmail.com
+        from: 'Rodrigo Lopez <rodrigolopezc03@gmail.com>'
+        body: 'Build job of ${{github.repository}} completed successfully on branch ${{github.ref_name}}.'
+        html_body: file://mail.html
+        ignore_cert: true
+        convert_markdown: true
